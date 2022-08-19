@@ -1,4 +1,5 @@
 
+
 #INDIVIDUAL PORTION
 
 #print("Running lab05Warmup_Sean.py")
@@ -7,7 +8,6 @@
 #import lab05Warmup_Benjamin
 
 #PAIR PORTION
-
 
 from PIL import Image
 
@@ -62,18 +62,26 @@ def mirrorHoriz( im ):
 #mirrorHoriz(bear)
 #bear.save("tmp_mirrorHoriz.png")
 
-#def flipVert( im ):
- #   (width, height) = im.size
-  #  for x in range( width ):
-   ##     for y in range( height//2 ):
-     #       (red, green, blue) = im.getpixel((x, y))
-      #      im.putpixel( (600-x-1, 800-x-1) , (red, green, blue) )
+def flipVert( im ):
+   (width, height) = im.size
+   for x in range( width ):
+       for y in range( height//2 ):
+           (red, green, blue) = im.getpixel((x, y))
+           (red1, green1, blue1) = im.getpixel((x, 800-y-1))
+           im.putpixel( (x, 800-y-1), (red, green, blue))
+           im.putpixel( (x, y), (red1, green1, blue1))
 
 #flipVert(bear)
 #bear.save("tmp_flipVert.png")   
 
 
+def scale( im ):
+    (width, height) = im.size
+    im = Image.new('255,0,0', (width//2,height//2))
+    return(Image.new)
 
 
+scale(bear)
+    
 
 
